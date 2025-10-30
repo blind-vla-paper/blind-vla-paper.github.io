@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Don’t Blind Your VLA: Aligning Visual Representations for OOD Generalization">
+  <meta name="description" content="Project page for 'Don’t Blind Your VLA: Aligning Visual Representations for OOD Generalization'.">
+  <meta name="keywords" content="vision-language, robotics, VLA, VLM, out-of-distribution generalization, representation alignment">
+  <meta name="author" content="Nikita Kachaev, Mikhail Kolosov, Daniil Zelezetsky, Alexey K. Kovalev, Aleksandr I. Panov">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Cognitive AI Lab / IAI MIPT">
+  <meta property="og:title" content="Don’t Blind Your VLA: Aligning Visual Representations for OOD Generalization">
+  <meta property="og:description" content="Vision–Language–Action models: retaining VL representations during action fine-tuning with Visual Representation Alignment.">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Don’t Blind Your VLA: Aligning Visual Representations for OOD Generalization - Research Preview">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:creator" content="@">
+  <meta name="twitter:title" content="Don’t Blind Your VLA: Aligning Visual Representations for OOD Generalization">
+  <meta name="twitter:description" content="Vision–Language–Action models: retaining VL representations with Visual Representation Alignment.">
+  <meta name="twitter:image" content="static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="Don’t Blind Your VLA: Aligning Visual Representations for OOD Generalization - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="Don’t Blind Your VLA: Aligning Visual Representations for OOD Generalization">
+  <meta name="citation_author" content="Nikita Kachaev">
+  <meta name="citation_author" content="Mikhail Kolosov">
+  <meta name="citation_author" content="Daniil Zelezetsky">
+  <meta name="citation_author" content="Alexey K. Kovalev">
+  <meta name="citation_author" content="Aleksandr I. Panov">
+  <meta name="citation_publication_date" content="2025">
+  <meta name="citation_conference_title" content="">
+  <meta name="citation_pdf_url" content="">
+
+  <title>Don’t Blind Your VLA: Aligning Visual Representations for OOD Generalization</title>
+
+  <!-- Favicon and CSS -->
+  <link rel="icon" type="image/x-icon" href="static/images/icon.png">
+  <link rel="apple-touch-icon" href="static/images/icon.png">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- JS -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Don’t Blind Your VLA: Aligning Visual Representations for OOD Generalization",
+  "description": "Vision–Language–Action models: retaining VL representations during action fine-tuning with Visual Representation Alignment.",
+  "author": [ {"@type": "Person", "name": "Nikita Kachaev", "affiliation": [{"@type": "Organization", "name": "Cognitive AI Lab"}]}, {"@type": "Person", "name": "Mikhail Kolosov", "affiliation": [{"@type": "Organization", "name": "IAI MIPT"}]}, {"@type": "Person", "name": "Daniil Zelezetsky", "affiliation": [{"@type": "Organization", "name": "IAI MIPT"}]}, {"@type": "Person", "name": "Alexey K. Kovalev", "affiliation": [{"@type": "Organization", "name": "Cognitive AI Lab"}, {"@type": "Organization", "name": "IAI MIPT"}]}, {"@type": "Person", "name": "Aleksandr I. Panov", "affiliation": [{"@type": "Organization", "name": "Cognitive AI Lab"}, {"@type": "Organization", "name": "IAI MIPT"}]} ],
+  "datePublished": "2025",
+  "publisher": {"@type": "Organization","name": ""},
+  "url": "",
+  "image": "static/images/social_preview.png",
+  "keywords": ["vision-language", "robotics", "VLA", "VLM", "OOD generalization", "representation alignment"],
+  "isAccessibleForFree": true
+}
+  </script>
+</head>
+<body>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">Don’t Blind Your VLA: Aligning Visual Representations for OOD Generalization</h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=GdG_BDsAAAAJ&hl=ru" target="_blank">Nikita Kachaev</a><sup>1</sup>,</span>
+                <span class="author-block"><a href="https://github.com/idkolosofff" target="_blank">Mikhail Kolosov</a><sup>2</sup>,</span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=6OY6gWcAAAAJ&hl=ru" target="_blank">Daniil Zelezetsky</a><sup>2</sup>,</span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=N1zWb74AAAAJ" target="_blank">Alexey K. Kovalev</a><sup>1</sup><sup>2</sup>,</span>
+                <span class="author-block"><a href="https://grafft.github.io/" target="_blank">Aleksandr I. Panov</a><sup>1</sup><sup>2</su</span>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>Cognitive AI Lab &nbsp; <sup>2</sup>IAI MIPT</span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- <span class="link-block">
+                    <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                      <span>Paper</span>
+                    </a>
+                  </span> -->
+
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2510.25616" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="ai ai-arxiv"></i></span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://huggingface.co/datasets/tttonyalpha/openvla_1k-dataset" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-database"></i></span>
+                      <span>Dataset</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://github.com/CognitiveAISystems/BlindVLA" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fab fa-github"></i></span>
+                      <span>Code (coming soon)</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-robot"></i></span>
+                      <span>Models (coming soon)</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="#BibTeX" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-quote-right"></i></span>
+                      <span>BibTeX</span>
+                    </a>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<!-- Teaser image-->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop" style="max-width: 1100px;">
+    <div class="hero-body"> -->
+      <!-- Main model image -->
+      <!-- <img src="static/images/method_1.png" alt="Visual alignment method" style="width: 100%; height: auto; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-xl); margin: 1rem 0;" /> -->
+      <!-- TODO: Replace with your image description -->
+      <!-- <h2 class="subtitle has-text-centered">
+        <strong>Visual alignment method overview.</strong> Mid-level VLA features are projected onto a normalized sphere and aligned with teacher embeddings, preserving visual semantics and improving OOD generalization. Bottom plots show comparison with standard SFT across three generalization axes on the Simpler-based benchmark
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop" style="max-width: 900px;">
+    <div class="hero-body">
+      <img
+        src="static/images/method_1.png"
+        alt="Visual alignment method"
+        style="width: 85%; height: auto; display: block; margin: 1rem auto; border-radius: 12px; box-shadow: none;"
+      />
+      <h2 class="subtitle has-text-centered" style="max-width: 800px; margin: 0 auto;">
+        <strong>Visual alignment method overview.</strong>
+        Mid-level VLA features are projected onto a normalized sphere and aligned with teacher embeddings, preserving visual semantics and improving OOD generalization. Bottom plots show comparison with standard SFT across three generalization axes on the Simpler-based benchmark.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop" style="max-width: 900px;">
+    <div class="hero-body" style="padding-top: 1rem; padding-bottom: 1rem;">
+      <img
+        src="static/images/method_1.png"
+        alt="Visual alignment method"
+        style="width: 85%; height: auto; display: block; margin: 0 auto; border-radius: 12px; box-shadow: none; transition: none;"
+      />
+      <p style="margin-top: 8px; margin-bottom: 24px; font-size: 0.85rem; color: #555; text-align: left; line-height: 1.4; max-width: 85%; margin-left: auto; margin-right: auto;">
+        <strong>Visual alignment method overview.</strong> Mid-level VLA features are projected onto a normalized sphere and aligned with teacher embeddings, preserving visual semantics and improving out-of-distribution (OOD) generalization. Bottom plots illustrate comparison with standard SFT across three generalization axes on the Simpler-based benchmark.
+      </p>
+    </div>
+  </div>
+</section> -->
+
+<section class="hero teaser">
+  <div class="container is-max-desktop" style="max-width: 900px;">
+    <div class="hero-body" style="padding-top: 1rem; padding-bottom: 1rem;">
+      <img
+        src="static/images/method_1.png"
+        alt="Visual alignment method"
+        style="width: 85%; height: auto; display: block; margin: 0 auto; border-radius: 12px; box-shadow: none; transition: none;"
+      />
+      <p style="margin-top: 12px; margin-bottom: 24px; font-size: 1.2rem; color: #555; text-align: center; line-height: 1.5; max-width: 85%; margin-left: auto; margin-right: auto;">
+        <strong>Visual alignment method overview.</strong> Mid-level VLA features are projected onto a normalized sphere and aligned with teacher embeddings, preserving visual semantics and improving out-of-distribution (OOD) generalization. Bottom plots illustrate comparison with standard SFT across three generalization axes on the Simpler-based benchmark.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+    
+    
+<!-- End teaser image -->
+    
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>The growing success of Vision-Language-Action (VLA) models stems from the promise that pretrained Vision-Language Models (VLMs) can endow agents with transferable world knowledge and vision-language (VL) grounding, laying a foundation for action models with broader generalization. Yet when these VLMs are adapted to the action modality, it remains unclear to what extent their original VL representations and knowledge are preserved. In this work, we conduct a systematic study of representation retention during VLA fine-tuning, showing that naive action fine-tuning leads to degradation of visual representations. To characterize and measure these effects, we probe VLA's hidden representations and analyze attention maps, further, we design a set of targeted tasks and methods that contrast VLA models with their counterpart VLMs, isolating changes in VL capabilities induced by action fine-tuning. We further evaluate a range of strategies for aligning visual representations and introduce a simple yet effective method that mitigates degradation and yields improved generalization to out-of-distribution (OOD) scenarios. Taken together, our analysis clarifies the trade-off between action fine-tuning and the degradation of VL representations and highlights practical approaches to recover inherited VL capabilities.</p>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <!-- Paper Introdiction -->
+
+
+
+    <section class="section">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3">Introduction</h2>
+
+        
+          <p>Vision–Language Models (VLMs) have achieved remarkable success by leveraging large-scale multimodal datasets to learn semantically grounded and generalizable visual–language representations. These advances have inspired extending VLMs to embodied domains. Vision–Language–Action (VLA) models adapt pretrained VLMs to robotic action prediction, aiming to transfer their semantic priors into action spaces for generalization to unseen scenes and tasks. However, fine-tuning often causes overfitting and degradation of visual–language representations. Prior works attempted to mitigate this via auxiliary reasoning objectives, co-training, or freezing VL backbones, but no effective solution exists for representation drift during supervised fine-tuning. We systematically investigate this degradation and propose a lightweight Visual Representation Alignment method, motivated by the Platonic Representation Hypothesis, which posits that large models converge toward shared semantic spaces. Our approach constrains VLA visual features to remain aligned with a generalist vision encoder during fine-tuning, preserving semantic grounding while adapting to robotic actions. Applied to the Simpler benchmark, this method yields up to a 10% relative gain in out-of-distribution generalization with negligible computational overhead.</p>
+
+        
+      </div>
+    </section>
+
+    
+    <!-- ===================== METHOD (styled like template) ===================== -->
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<section class="section" id="method">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Method</h2>
+
+    <div class="image-container" style="position: relative; width: 100%; margin: 0 auto;">
+    <img 
+      src="static/images/scheme1_1.png" 
+      alt="Heatmap of T-Maze results" 
+      style="width: 100%; border-radius: 12px; transition: none; display: block; margin: 0 auto;"
+      class="static-image"
+    >
+    <p style="margin-top: 8px; margin-bottom: 20px; font-size: 0.85rem; color: #555; text-align: left; line-height: 1.4;">
+      <strong>Overview of the proposed method.</strong> (a, b) Training pipeline with visual alignment loss - no extra overhead, only precomputed teacher features and a lightweight regularization term during SFT. (c) Conceptual illustration of the loss landscape for VL tasks: the core idea is to optimize the model with respect to the action objective while preserving performance on VL understanding.
+    </p>
+  </div>
+    
+
+    <div class="content">
+      <p>
+        Following the <a href=https://phillipi.github.io/prh>Platonic Representation Hypothesis</a>,
+        we assume that high-performing vision, language, and multimodal models tend to converge toward a shared latent representation space
+        that captures general semantic and perceptual structure across different modalities. Each modality offers a compatible view of this
+        space, and a VLA model can be regarded as a policy that grounds its decision-making in a subset of these multimodal representations. 
+        Task-specific fine-tuning can induce representational drift, pulling internal VLA features away from this
+        generalized space causing it to lose connection to broad, transferable semantic. We address this with <strong>Visual Representation Alignment</strong>:
+        a lightweight objective that anchors the VLA’s visual representations to a frozen, semantically rich vision teacher.
+      </p>
+
+      <h3 class="title is-5">Visual representation alignment</h3>
+      <p>
+        Let the frozen teacher encoder be \(E^{*}_{\mathrm{img}}\) and the VLA’s visual features live in \(\mathbb{R}^{d_e}\).
+        We introduce a projector \(P_{\phi}:\mathbb{R}^{d_e}\!\to\!\mathbb{R}^{d_t}\) to map VLA features into the teacher space.
+        For an input image \(I\) producing \(k\) patch embeddings, the teacher targets are
+        \(\mathbf{z}_{1:k}=E^{*}_{\mathrm{img}}(I)\) and the projected VLA features are
+        \(\mathbf{u}_{1:k}=P_{\phi}(\mathbf{h}_{1:k})\).
+        We maximize patch-wise similarity between projected VLA features and teacher embeddings to encourage
+        perceptual consistency and prevent degradation:
+      </p>
+      <p>
+        \[
+          \mathcal{L}_{\text{align}}
+          = -\frac{1}{k}\sum_{j=1}^{k}\operatorname{sim}\!\big(\mathbf{u}_j,\mathbf{z}_j\big),
+        \]
+      </p>
+      <p>
+        The training objective augments the standard VLA policy loss with the alignment term:
+      </p>
+      <p>
+        \[
+          \mathcal{L}_{\text{total}}
+          = \mathcal{L}_{\text{VLA}} + \lambda\,\mathcal{L}_{\text{align}}, \qquad \lambda>0.
+        \]
+      </p>
+      <p>
+        Gradients update the VLA encoders and Transformer backbone, while the teacher \(E^{*}_{\mathrm{img}}\) remains frozen,
+        serving as a fixed perceptual prior that preserves broad visual–semantic structure throughout fine-tuning.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- VL-Think Task Suite (Bulma-styled for the new template) -->
+<section class="section" id="vlthink">
+  <div class="container is-max-desktop">
+    <div class="content">
+      <h2 class="title is-3">VL-Think Task Suite</h2>
+
+      <div class="image-container" style="position: relative; width: 100%; margin: 0 auto;">
+        <img 
+          src="static/images/vl_think.png" 
+          alt="Overview of VL-Think benchmark" 
+          style="width: 100%; border-radius: 12px; transition: none; display: block; margin: 0 auto;"
+          class="static-image"
+        >
+        <p style="margin-top: 8px; margin-bottom: 20px; font-size: 0.85rem; color: #555; text-align: left; line-height: 1.4;">
+          <strong>VL-Think benchmark.</strong> A comprehensive suite of tasks designed to diagnose vision–language–action generalization across semantic, visual, and execution variations. Each subset probes a specific dimension of out-of-distribution reasoning in embodied settings.
+        </p>
+      </div>
+
+      
+      <p>
+        Existing VLA benchmarks mainly evaluate task execution under distribution shifts - changes in objects,
+        scenes, or textures, but provide limited insight into whether pretrained
+        vision-language (VL) knowledge is preserved after action fine-tuning. To address this gap, we introduce the <strong>VL-Think Task Suite</strong>,
+        a diagnostic suite assessing the transfer of VL understanding and knowledge
+        from VLMs to VLAs independently of low-level control.
+        The suite focuses on whether models retain the ability to interpret visual symbols,
+        compositional cues, and categorical relations rather than pure manipulation skills.
+        Control complexity is intentionally minimized so that any degradation
+        reflects a loss of VL understanding.
+      </p>
+
+      <h3 class="title is-4">Evaluation Protocol</h3>
+      <p>We evaluate both VLA and VLM models.</p>
+      <ul>
+        <li>
+          <strong>VLA evaluation:</strong> The agent observes RGB frames and natural-language
+          instructions. Success is recorded when a known object is placed on the correct
+          target board, directly measuring grounding of language in visual categories.
+        </li>
+        <li>
+          <strong>VLM evaluation:</strong> The same scenes are shown statically with the probe
+          <em>“Do you see the &lt;board_name&gt;?”</em>.
+          Success requires correctly identifying both the target board and its location,
+          providing an action-free measure of semantic grounding.
+        </li>
+      </ul>
+
+      <h3 class="title is-4">VL-Think Description</h3>
+      <p>
+        VL-Think builds on the <a href=https://simpler-env.github.io>Simpler</a> benchmark using a
+        WidowX-250S arm in a simplified pick-and-place setup.
+        Each episode spawns one familiar object (a carrot) and several planar boards
+        textured with abstract categories (icons, shapes, numerals).
+        A language instruction specifies a target concept and the agent succeeds if it places the object on the matching board. 
+        The suite includes eight board-selection tasks probing distinct knowledge types:
+        <code>Shape</code>, <code>Color</code>, <code>Traffic</code>,
+        <code>Laundry</code>, <code>Weather</code>, <code>Arrow</code>,
+        <code>Public information</code>, and <code>Numeral parity</code>.
+        By fixing the object and motor control, VL-Think isolates semantic
+        understanding while bounding execution complexity.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- VL Representations Analysis -->
+<section class="section" id="vl-representations">
+  <div class="container is-max-desktop">
+    <div class="content">
+      <h2 class="title is-3">VL Representations Analysis</h2>
+
+      <p>
+        We investigate how VL representations evolve in VLA models after
+        action fine-tuning. Specifically, we ask whether semantic grounding and knowledge transfer
+        from pretrained VLMs are preserved. To assess degradation, we combine three complementary analyses:
+        <strong>attention map analysis</strong> - examines how accurately the model attends
+        to objects referenced in text, <strong>t-SNE visualization</strong> - illustrates the latent space structure formed 
+        by instruction-related token embeddings, <strong>VL-Think evaluation</strong> - measures transfer of pretrained VL knowledge and understanding
+        to VLA policies. Together, these diagnostics reveal whether fine-tuning erodes visual grounding,
+        latent organization, or domain knowledge.
+      </p>
+
+      <h3 class="title is-4">Attention Sink</h3>
+      <!-- Image carousel -->
+      <section class="hero is-small">
+        <div class="hero-body">
+          <div class="container">
+            <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static/images/att3.png" alt="Second research result visualization" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">
+                Question: "Do you see plate?"
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static/images/att2.png" alt="Third research result visualization" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">
+               Question: "Do you see baguette?"
+             </h2>
+           </div>
+           <div class="item">
+            <!-- Your image here -->
+            <img src="static/images/att1.png" alt="Fourth research result visualization" loading="lazy"/>
+            <h2 class="subtitle has-text-centered">
+              Question: "Do you see hamburger?"
+            </h2>
+          </div>
+        </div>
+      </div>
+      </div>
+      </section>
+      <!-- End Image carousel -->
+
+      
+      <p>
+        Attention maps from middle transformer layers (where VL fusion peaks)
+        show distinct behaviors across models.
+        <strong>Qwen2.5-VL</strong> maintains sharp, object-aligned focus,
+        whereas <strong>OpenVLA</strong> displays substantial degradation in attention quality: 
+        the maps become diffuse, noisy, and weakly correlated with the target object indicating attention sink.
+        Our Visual Representation Alignment method restores object-centric
+        focus and clear attention boundaries.
+      </p>
+
+      <h3 class="title is-4">Representation Collapse</h3>
+
+      <div class="image-container" style="position: relative; width: 70%; margin: 0 auto;">
+        <img 
+          src="static/images/tsne1.png" 
+          alt="t-SNE visualization of token embeddings" 
+          style="width: 100%; border-radius: 12px; transition: none; display: block; margin: 0 auto;"
+          class="static-image"
+        >
+        <p style="margin-top: 8px; margin-bottom: 20px; font-size: 0.85rem; color: #555; text-align: left; line-height: 1.4;">
+          <strong>t-SNE visualization of token embeddings.</strong> PrismaticVLM and Qwen2.5-VL maintain well-separated clusters for target objects, while OpenVLA shows strong overlap across classes, indicating that action fine-tuning leads to representation collapse.
+        </p>
+      </div>
+            
+      
+      <p>
+        Using t-SNE on COCO dataset samples, we compare embeddings of
+        <strong>Qwen2.5-VL</strong>, <strong>PrismaticVLM</strong>,
+        and <strong>OpenVLA</strong>.
+        The former two retain well-separated clusters and semantically organized latent space, while OpenVLA shows
+        overlapping, collapsed clusters evidence that fine-tuning for robot control disrupts the structured organization of its inherited representations
+        and induces representation collapse.
+
+      </p>
+
+      <h3 class="title is-4">Domain Forgetting</h3>
+        <div id="tab-domain_forget" class="image-container" style="position: relative; width: 100%; margin: 0 auto;">
+          <img 
+            src="static/images/table_domain_forget.png" 
+            alt="Table showing domain forgetting" 
+            style="width: 100%; border-radius: 12px; transition: none; display: block; margin: 0 auto;"
+            class="static-image"
+          >
+          <p style="margin-top: 8px; margin-bottom: 20px; font-size: 0.85rem; color: #555; text-align: left; line-height: 1.4;">
+            <strong>VL-Think VLM results across eight domains.</strong> The benchmark reveals a strong correlation between VL understanding and model scale: larger VLMs achieve higher overall success. However, OpenVLA–7B fine-tuned for action shows clear VL degradation: its performance drops markedly compared to the original PrismaticVLM across all domains except color, where VL skills remain largely preserved.
+          </p>
+        </div>
+
+      <p>
+        Evaluation on the <strong>VL-Think suite</strong> compares
+        <strong>OpenVLA–7B</strong> with its pretrained base
+        <strong>PrismaticVLM</strong> and several state-of-the-art VLMs.
+        Strong VLMs show high success across domains, reflecting robust semantic grounding.
+        Yet action fine-tuning induces domain-specific forgetting: OpenVLA–7B suffers major drops, 
+        especially in symbolic and abstract categories (traffic, arrows, public information, weather). 
+        We hypothesize that VLA models lose knowledge about domains that are absent in robotics fine-tuning datasets. Only <code>Color</code> transfer persists, 
+        as color cues remain useful for control and are implicitly represented in robotics data.
+
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- Experiments Section (Bulma-styled for the new template) -->
+<section class="section" id="results">
+  <div class="container is-max-desktop">
+    <div class="content">
+      <h2 class="title is-3">Experiments</h2>
+
+      <h3 class="title is-4">Evaluation Setup</h3>
+      <p>
+        We evaluate our approach in Simpler-based environments using the <strong>VL-Think Task Suite</strong> 
+        and the benchmark introduced in <a href=https://rlvla.github.io>RL4VLA</a> measuring VLA generalization across 
+        <strong>Vision</strong> (textures, noise), <strong>Semantics</strong> (unseen objects, paraphrases, distractors), and <strong>Execution</strong> (randomized poses, 
+        object changes). OOD evaluation holds out one variation per axis, including 9 new objects, 16 unseen receptacles, 
+        and 16 distractor backgrounds. We collect 1,400 expert training episodes using motion planner, covering 16 tables and 16 objects 
+        (~5 demonstrations per variation) and evaluate following baselines: <strong>Default</strong> (standard supervised fine-tuning), 
+        <strong>Freeze</strong> (fine-tuning with a frozen visual encoder), and <strong>Align (ours)</strong> (fine-tuning with our proposed Visual Representation Alignment method).
+      </p>
+
+      <h3 class="title is-4">Results: OOD Evaluation</h3>
+      <!-- 1. OOD generalization table -->
+      <div class="image-container" style="position: relative; width: 100%; margin: 0 auto;">
+        <img 
+          src="static/images/table_ood.png" 
+          alt="OOD generalization performance table" 
+          style="width: 100%; border-radius: 12px; transition: none; display: block; margin: 0 auto;"
+          class="static-image"
+        >
+        <p style="margin-top: 8px; margin-bottom: 20px; font-size: 0.85rem; color: #555; text-align: left; line-height: 1.4;">
+          <strong>OOD generalization performance.</strong> Mean ± SD across evaluation environments. The proposed alignment objective yields consistent gains over SFT and frozen-encoder baselines, indicating enhanced robustness to out-of-distribution domain shifts.
+        </p>
+      </div>
+      <p>
+        Our alignment method yields <strong>consistent improvements across all evaluation axes</strong>. This result underscores the effectiveness of Visual Representation
+        Alignment in enhancing robustness to visual shifts, text instruction variations, texture changes, and 
+        background perturbations that frequently occur in real-world scenarios
+        In contrast, the Freeze baseline fails completely, confirming that static
+        visual features desynchronize from evolving action layers.
+        Visual alignment acts as a regularizer that preserves general semantics
+        during adaptation to new environments.
+      </p>
+      <h3 class="title is-4">Results: Linear Probing</h3>
+
+      <!-- 2. Linear probing table -->
+      <div class="image-container" style="position: relative; width: 50%; margin: 0 auto;">
+        <img 
+          src="static/images/table_lin_prob.png" 
+          alt="Linear probing results table" 
+          style="width: 100%; border-radius: 12px; transition: none; display: block; margin: 0 auto;"
+          class="static-image"
+        >
+        <p style="margin-top: 8px; margin-bottom: 20px; font-size: 0.85rem; color: #555; text-align: left; line-height: 1.4;">
+          <strong>Linear probing results.</strong> OpenVLA-Align retains stronger features than both the pretrained and SFT variants, closing much of the gap to the C-RADIOv3 teacher and demonstrating improved semantic consistency after action fine-tuning.
+        </p>
+      </div>
+      
+      <p>
+        Linear probing on ImageNet-100 demonstrates that our proposed Visual Representation Alignment method <strong>enhances representations quality</strong>,
+        outperforming both the pretrained checkpoint and naive SFT. The alignment objective strengthens semantic consistency and leads to more transferable visual features.
+        
+      </p>
+
+      <h3 class="title is-4">Results: VL-Think</h3>
+      <p>
+        Evaluation on the <a href="#tab-domain_forget">VL-Think Suite</a>
+        shows that our proposed Visual Representation alignment method <strong> mitigates domain forgetting </strong>
+        and improves performance in <code>Color</code> and <code>Shape</code> tasks,
+        occasionally surpassing the PrismaticVLM upper bound. However, limited data diversity 
+        and LoRA capacity constrain recovery
+        of rarer VL concepts — an important direction for future work.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" onclick="navigator.clipboard.writeText(document.getElementById('bibtex-code').innerText)" title="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>
+          
+          @misc{kachaev2025dontblindvlaaligning,
+                title={Don't Blind Your VLA: Aligning Visual Representations for OOD Generalization}, 
+                author={Nikita Kachaev and Mikhail Kolosov and Daniil Zelezetsky and Alexey K. Kovalev and Aleksandr I. Panov},
+                year={2025},
+                eprint={2510.25616},
+                archivePrefix={arXiv},
+                primaryClass={cs.LG},
+                url={https://arxiv.org/abs/2510.25616}, 
+          }
+        
+        </code></pre>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website; please link back to this page in the footer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
